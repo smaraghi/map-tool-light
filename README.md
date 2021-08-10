@@ -2,6 +2,8 @@
 
 A light mapping tool made in Vue.js hosted on AWS S3
 
+https://map-tool-light.s3.us-east-1.amazonaws.com/index.html
+
 ## Project setup
 
 ```
