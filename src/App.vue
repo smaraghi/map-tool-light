@@ -44,7 +44,7 @@
             @click="markerMode = true"
             placeholder="Select Icon"
           >
-            <option value="null" disabled hidden>Select Icon</option>
+            <option value="null" disabled>Select Icon</option>
             <option
               v-for="option in options"
               v-bind:key="option"
@@ -142,7 +142,8 @@ export default {
       selectedIcon: null,
       selectedText: '',
       selectedTab: 'icon',
-      isModalVisible: false
+      isModalVisible: false,
+      publicPath: process.env.BASE_URL
     }
   },
 
@@ -179,13 +180,8 @@ export default {
           el.className = 'marker'
 
           if (this.selectedTab === 'icon') {
-            const width = 50
-            const height = 50
-
-            const icon = `/assets/icons/${this.selectedIcon}.svg`
+            const icon = `${this.publicPath}assets/icons/${this.selectedIcon}.svg`
             el.style.backgroundImage = `url(${icon})`
-            el.style.width = `${width}px`
-            el.style.height = `${height}px`
           } else {
             el.innerText = `${this.selectedText}`
           }
@@ -397,7 +393,8 @@ input {
 }
 
 .btn--submit {
-  margin-left: 12px;
+  margin-top: 12px;
+  margin-left: 8px;
   padding: 6px 24px;
   border-radius: 2px;
 }
@@ -456,8 +453,12 @@ input {
 }
 
 .marker {
+  height: 50px;
+  width: 50px;
   font-size: 14px;
   background-size: 100%;
+  stroke: rgba(255, 255, 255);
+  fill: rgba(255, 255, 255);
   filter: invert(100%) sepia(0%) saturate(7485%) hue-rotate(1deg)
     brightness(100%) contrast(103%);
 }
