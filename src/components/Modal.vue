@@ -54,9 +54,16 @@ export default {
 
 .modal-header {
   position: relative;
-  border-bottom: 1px solid #eeeeee;
-  color: #4aae9b;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
   justify-content: space-between;
+  background: #202c36;
+  text-transform: uppercase;
+  font-size: 18px;
+  color: #fff;
+  /*
+  color: #242c32;
+  */
 }
 
 .modal-footer {
@@ -67,7 +74,8 @@ export default {
 
 .modal-body {
   position: relative;
-  padding: 20px 10px;
+  padding: 0 10px;
+  background: #fff;
 }
 
 .modal-fade-enter,
@@ -85,18 +93,15 @@ export default {
   top: 0;
   right: 0;
   border: none;
-  font-size: 20px;
+  font-size: 24px;
   padding: 10px;
   cursor: pointer;
-  font-weight: bold;
-  color: #4aae9b;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.8);
   background: transparent;
 }
 
-.btn-green {
-  color: white;
-  background: #4aae9b;
-  border: 1px solid #4aae9b;
-  border-radius: 2px;
+.btn-close:hover {
+  color: rgba(255, 255, 255);
 }
 </style>
